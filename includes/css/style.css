@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html 
+{
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+}
+
+.unselectable 
+{
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}
+
+::selection 
+{
+  background: #FFCE06; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection 
+{
+  background: #FFCE06; /* Gecko Browsers */
+}
+
+::-webkit-scrollbar 
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track 
+{
+    background: white; 
+}
+ 
+::-webkit-scrollbar-thumb 
+{
+    background: #FFCE06; 
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+    background: #FFCE06; 
+}
+
+body
+{
+    padding: 0px;
+    margin: 0px;
+
+    font-family: "Ubuntu", sans-serif;
+    background-color: #F5F5F6;
+}
+
+.background
+{
+     /*will do it for now*/
+     background-image: url(../images/rotterdam.png);
+     background-repeat: repeat-y;
+     background-size: 100%;
+}
+
+.container_center
+{
+    display: flex;
+    justify-content: center;
+}
+
+/*======================================== HEADER ===================================*/
+#logo
+{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    width: 250px;
+    box-shadow: 5px 5px 10px -3px #69696980;
+}
+
+#logo img
+{
+    width: inherit;
+}
+
+#menuButton
+{
+    background-color: white;
+    cursor: pointer;
+    border: none; 
+    outline: none;
+    position: fixed;
+    top: 20px; 
+    right: 20px;
+    z-index: 99;
+    padding: 10px;
+    box-shadow: 5px 5px 10px -3px #69696980;
+
+    height: 60px;
+}
+
+#menuButton img
+{
+    height: 40px;
+}
+
+.menuOverlay 
+{  
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color:white;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    transition: all 0.5s ease; 
+}
+
+.menuOverlay-actions
+{
+    position: relative;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; 
+}
+
+.menuOverlay a
+{
+    color: #00717C;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 2em;
+    line-height: 8px;
+    display: block;
+}
+
+
+.menuOverlay .closeButton 
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 80px;
+    color: #FFCE06;
+    text-decoration: none;
+}
+
+/*======================================== H1 ===================================*/
+.h_text
+{
+    font-family: "Ubuntu", sans-serif;
+    background-color: white;
+    box-shadow: 5px 5px 10px -3px #69696980;
+    
+    text-align: center;
+    color: #00717C;
+
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 600px;
+}
+/*======================================== Form ===================================*/
+
+.form_page
+{
+    font-family: "Ubuntu", sans-serif;
+    background-color: white;
+    box-shadow: 5px 5px 10px -3px #69696980;
+
+    margin: 20px 20px 0px 20px;
+    padding: 0px 20px 20px 20px;
+    width: 500px;
+    transition: all 0.5s ease; 
+    height: 221px;
+}
+
+#expand
+{
+    transition: all 0.5s ease; 
+}
+
+#hidden
+{
+    display: none;
+    transition: all 0.5s ease; 
+}
+
+.input
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+
+    margin-top: 20px;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #a1a1a180;
+    box-sizing: border-box;
+}
+
+#recap
+{
+    margin-top: 20px;
+}
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button 
+{
+    display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button 
+{ 
+    display: none;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] 
+{
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: "Open Sans", sans-serif;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+
+input[type=email]:focus, input[type=text]:focus, input[type=submit]:focus,input[type=date]:focus, input[type=file]:focus, select:focus, textarea:focus
+{
+    outline: 2px solid #00717C;
+}
+
+#times_container
+{
+    height: 135px;
+}
+
+.time_block
+{
+    float: left;
+    background-color: #00717C;
+    width: 65px;
+    box-shadow: 1px 1px 1px 1px #a1a1a180;
+    padding: 5px;
+
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+#text_area
+{
+    resize: none;
+}
+
+#file_upload
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+
+    margin-top: 20px;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+
+#submit
+{
+    display: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    background-color: #FFCE06;
+    color:white;
+    text-align: center;
+
+    padding: 10px;
+    margin: 0px 20px 100px 20px;
+    
+    width: 540px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #a1a1a180;
+    cursor: pointer;
+}
+
+#hidden-dates
+{
+    display: none;
+}
+
+#message
+{
+    background-color: #d64541;
+    width: 500px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    color: white;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+}
+
+#succeed_page
+{
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: white;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+}
+
+.button
+{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    background-color: #FFCE06;
+    color:white;
+    text-align: center;
+
+    padding: 10px;
+    margin: 0px 20px 100px 20px;
+    
+    width: 540px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #a1a1a180;
+    cursor: pointer;
+}
+
+#top_margin_fix
+{
+    margin-top: 0px !important;
+}
+
+/* ==============================ADMIN PANEL==================================== */
+#calendarbody
+{
+    margin: 20px 20px 100px 20px;
+    padding: 0px 20px 20px 20px;
+    background-color: #DFECEE;
+    box-shadow: 5px 5px 10px -3px #69696980;
+    width: 550px;
+}
+
+#calendarbody h2
+{
+    font-family: "Open Sans", sans-serif;
+    color: #636363;
+}
+
+.appointment_table
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+
+    border-spacing:0 15px; 
+}
+
+.appointment_table tr
+{
+    box-shadow: 5px 5px 10px -3px #69696980;
+}
+
+.appointment_table td
+{
+    padding: 10px;
+    background-color:  white;
+}
+
+.hidden_info_table
+{
+    width: 100%;
+}
+
+.balk
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: flex-start;
+    align-items: center;
+    width:100%;
+    z-index: 2;
+    position: relative;
+
+    background:white;
+    padding:10px 10px 10px 10px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px -3px #69696980;
+    margin-top: 20px;
+}
+
+.one
+{
+    width: 35%;
+    padding:0 
+}
+
+.third
+{
+    width: 40px;
+    padding:0 
+}
+
+.second
+{
+    width: 82px;
+    padding:0 
+}
+
+.fourth
+{
+    width: 30px;
+    height: 30px;
+}
+
+.hidden_appointment_div
+{
+    width: 100%;
+    height: 0px;
+    background-color: #F5F5F6;
+    box-shadow: 5px 5px 10px -3px #69696980;
+    transition: all 0.5s ease; 
+}
+
+.hidden_appointment_div form
+{
+    display: none;
+}
+
+.show
+{
+    height: 650px !important;
+}
+
+.showInput
+{
+    display: block !important;
+}
+
+#form_update
+{
+    font-family: "Ubuntu", sans-serif;
+    margin: 20px 20px 0px 20px;
+    padding: 0px 20px 20px 20px;
+
+    z-index: 2;
+    position: relative;
+}
+
+#submit_update
+{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    background-color: #FFCE06;
+    color:white;
+    text-align: center;
+
+    padding: 10px;
+    
+    margin-top: 20px;
+    margin-bottom: 100px;
+    width: 100%;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #a1a1a180;
+    cursor: pointer;
+}
+
+#messageList
+{
+    background-color: #00717C;
+    width: 500px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    color: white;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+}
+
+.deletebutton
+{
+    background:url('../images/delete.png');
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#messageDelete
+{
+    float: right;
+    background:url('../images/delete2.png');
+    width: 15px;
+    height: 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#logoutButton
+{
+    border: none;
+    cursor: pointer;
+
+    color: #00717C;
+    font-family: "Ubuntu", sans-serif;
+    
+    font-size: 32px;
+    background-color: white;
+}
+
+#addSettings
+{
+    width: 100%;
+}
+
+.settingAdd
+{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 140px;
+    background-color: #F5F5F6;
+    box-shadow: 5px 5px 10px -3px #69696980;
+    transition: all 0.5s ease; 
+}
+
+#long_setting_add
+{
+    height: 245px;
+}
